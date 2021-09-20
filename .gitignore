@@ -1,0 +1,29 @@
+# Ignore Standard Files and Directories
+.DS_Store
+*cache
+**/logs
+**/archives
+*.log
+*.htaccess
+/scratch.txt
+/git-hooks/
+/htaccess.txt
+/gitignore.txt
+/staging/
+/production/
+/assets/
+
+# NPM Package Ignores
+**/node_modules
+*.sass-cache
+
+# Ignore Standard Media Directories
+/media/wp-content/uploads/wp-migrate-db
+
+# Ignore localhost wp-config file
+/wp-config.php
+
+# Ignore local database files
+*_db_backup.tar.gz
+*.sql
+
