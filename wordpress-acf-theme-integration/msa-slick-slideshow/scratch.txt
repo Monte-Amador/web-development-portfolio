@@ -1,0 +1,44 @@
+## msa-slick-slideshow
+
+So here's how to get it all hooked up for the Wordpress plugin:
+Keep in mind this presumes that you are creating a simple homepage header slider based from the twentyseventeenchild theme
+
+- [ ] Create the Wordpress plugin, in this example I am using: [Open Project File in Finder](file:////Users/monte/Sites/wp-bac/training/wp-content/plugins/msa-slick-slideshow) as the structure
+- [ ] Download the dependencies from Resource(s): Slick <http://kenwheeler.github.io/slick/>
+- [ ] enqueue css and scripts in msa-slick-slideshow.php file
+- [ ] in theme file `header-image.php` edit the block `<div class="custom-header-media">` with the following example:
+
+<div class="custom-header-media">       
+                <!-- check if plugin dependencies are activated (acf and msa-slick-slideshow) -->
+    <?php  include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
+    <?php if ( is_plugin_active( 'advanced-custom-fields-pro/acf.php' ) && is_plugin_active( 'msa-slick-slideshow/msa-slick-slideshow.php' ) && is_page( 'home' ) ) : ?>
+            <?php $images = get_field('slideshow_images'); // Field Group Name ?>
+                                            
+            <?php // $images = get_post_meta( $post->ID, 'slideshow_images' ); // Field Group Name ?>
+    
+            <?php if ( $images) : ?>
+            
+                    <div class="slick-wrapper">
+                        <?php foreach( $images as $image ): ?>
+                            <div class="image" style="background-image:url('<?php echo $image['url']; ?>');background-size:cover;background-position:center top; height:100vh;">
+                            </div><!-- end image div -->
+                    
+                        <?php endforeach; ?>
+                    </div><!-- end slick slideshow wrapper -->
+                <?php else: ?>
+                    <?php the_custom_header_markup(); ?>
+                <?php endif; ?>
+                
+        <?php else : ?>
+            <?php  the_custom_header_markup(); ?>
+        <?php endif; ?>
+
+</div><!-- end custom-header-media -->
+
+                <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+
+</div><!-- .custom-header -->
+
+- [ ] Create new ACF Field Group with gallery field and title the field Slideshow Image (Use name: slideshow_images in above code) usable only on homepage
+- [ ] populate gallery with images and check everything including fallbacks for plugins not activated.
+
