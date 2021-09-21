@@ -31,7 +31,6 @@ if ( is_plugin_active( 'msa-slick-slideshow/msa-slick-slideshow.php' ) ) {
    wp_enqueue_script('msa-slick-slideshow-scripts', MSA_SLICK_SLIDESHOW_PATH . 'js/slick-slideshow.js', array( 'jquery'));
  }
 
-} // END CONDITIONAL TEST FOR ACTIVE PLUGIN
+}
 
-// Do not delete closing bracket
 ?>

@@ -7,7 +7,7 @@
  */
 
 ?>
-<!-- CREATE CTA POSTCARD SECTIONS -->
+<!-- CREATE POSTCARD SECTIONS -->
   <div class="primary-programs">
     <!-- Create Custom Query -->
     <?php $custom_query = new WP_Query( array(
