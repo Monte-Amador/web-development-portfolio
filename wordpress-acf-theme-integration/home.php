@@ -21,4 +21,3 @@
   </header>
   <?php include('primary-programs.php'); ?>
   <?php include('secondary-programs.php'); ?>
-<?php endif; ?>
