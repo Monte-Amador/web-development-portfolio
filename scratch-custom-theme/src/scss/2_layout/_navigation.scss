@@ -1,0 +1,185 @@
+/** 04 - NAVIGATION **/
+
+// Begin header and navigation
+header div#nav-wrap {
+  background-color:$frost;
+  text-align: center;
+  top:30;
+  left:0;
+  position:fixed;
+  width: 100%;
+  z-index: 100;
+  h1.logo a {
+    width: 150px;
+    @media all and (min-width: 768px) {
+      width: 250px;
+    }
+
+    padding:0;
+    display: inline-block;
+  }
+}
+
+nav {
+  position:absolute;
+  background-color:rgba($white, 1 );
+  width: 100%;
+  text-align: left;
+  top:100%;
+  left: 0;
+  transform:scale(1,0);
+  transform-origin: top;
+  transition: transform 300ms ease-in-out;
+}
+nav ul {
+  margin: 0;
+  padding:0;
+  list-style: none;
+}
+nav li {
+  margin-bottom: 1.5em;
+  margin-left: 1em;
+}
+nav a {
+  color:$dark-gray;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:1.4rem;
+  font-family:'neuton-regular', sans-serif;
+
+  @media all and (min-width: 800px) {
+  font-size:1.3rem;
+  letter-spacing:0.03rem;
+}
+
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+nav a:hover {
+  color:$light-gray;
+  transition: 0.75s;
+}
+
+// Toggler Animate
+.nav-toggle:checked ~ .nav-toggle-label {
+  transform: rotate(135deg);
+  transition: all 0.4s ease-in-out;
+}
+// Rotate Hamburger menu to X
+.nav-toggle:checked ~ .nav-toggle-label span:before, .nav-toggle:checked ~ .nav-toggle-label span:after {
+  top:0;
+  transform: rotate(90deg);
+}
+// Rotate on hover when checked
+.nav-toggle:checked:hover ~ .nav-toggle-label {
+transform: rotate(225deg);
+}
+.nav-toggle:checked ~ nav {
+  transform:scale(1,1);
+}
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 100ms ease-in-out 210ms;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  position:absolute;
+  z-index: 2;
+  top:0;
+  margin-left:1em;
+  left:0;
+  height: 100%;
+  display: flex;
+  align-items:center;
+}
+
+// HAMBURGER MENU
+.nav-toggle-label span, 
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+display: block;
+background-color:$dark-gray;
+height: 3px;
+width: 1.7em;
+border-radius: 2px;
+position:relative;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position:absolute;
+}
+.nav-toggle-label span::before {
+  bottom:8px;
+}
+.nav-toggle-label span::after {
+  top:8px;
+}
+
+// NAV MEDIA QUERIES
+@media all and (min-width: 800px) {
+  .nav-toggle-label{
+    display: none;
+  }
+  header div#nav-wrap {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+  .logo {
+    grid-column: 1 / span 2;
+    margin:0.75rem 0 0 3.75rem;
+    a {
+      max-width: 250px;
+      min-width: 75px;
+      display: inline-block;
+    }
+    @media all and (min-width: 800px) and (max-width: 900px) {
+      grid-column: 1 / span 4;
+      padding-bottom:2rem; 
+    }
+  }
+  nav {
+    all: unset;
+    grid-column: 3 / span 4;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    @media all and (min-width:800px) and (max-width:900px) {
+      grid-column: 1 / span 4;
+      justify-content:center;
+      padding-bottom:2rem;
+    }
+  }
+  nav ul {
+    display: flex;
+    flex-wrap:wrap;
+  }
+  nav li {
+    margin-left: 2em;
+    margin-bottom: 0;
+  }
+  nav a {
+    opacity: 1;
+    position:relative;
+    &:hover::before {
+      transform:scale(1,1);
+    }
+  }
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background:$callout;
+    position:absolute;
+    top:-.75em;
+    left:0;
+    right:0;
+    @media all and (min-width: 800px) {
+     transform:scale(1,0);
+     transform-origin:bottom;
+     transition:transform ease-in-out 150ms;
+    }
+  }
+}

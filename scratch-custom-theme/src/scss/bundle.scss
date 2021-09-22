@@ -1,0 +1,40 @@
+/*
+Theme Name: Scratch Custom Theme
+Author: Monte Amador
+Description: Simple WordPress theme
+Version: 0.0.1
+Tags: gulp, responsive, mobile first
+*/
+
+/**
+
+* 01 - RESETS
+* 02 - TYPOGRAPHY
+* 03 - NAVIGATION
+* 04 - BASE STRUCTURE
+* CH05 - Content & Media
+* CH06 - Footer
+* CH07 - Miscellaneous
+
+**/
+
+// Nomalize,Typography,Helper Class
+// Functions,Mixins,Variables
+@import '1_base/01_import-now.scss';
+@import '1_base/03_utilities';
+@import '1_base/02_typography';
+@import '1_base/04_general_setup';
+
+// Layout
+@import '2_layout/navigation';
+@import '2_layout/05_page';
+@import '2_layout/contact';
+@import '2_layout/features';
+@import '2_layout/footer';
+
+// Components
+@import '3_components/forms';
+@import '3_components/buttons';
+
+// Libraries
+@import '4_libraries/slick';

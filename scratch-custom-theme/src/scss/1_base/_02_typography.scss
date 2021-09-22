@@ -1,0 +1,183 @@
+/* ---------------------------------------------------------------- */
+/* 02.Typography                                                  
+/* ---------------------------------------------------------------- */
+
+// FONT FACE DECLARATIONS
+@font-face  {
+  font-family: 'neuton';
+  src: url("../webfonts/neuton-light.woff2") format("woff2"), url("../webfonts/neuton-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face  {
+  font-family: 'neuton-regular';
+  src: url("../webfonts/neuton-regular.woff2") format("woff2"), url("../webfonts/neuton-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'handlee';
+  src: url("../webfonts/Handlee-Regular.woff2") format("woff2"), url("../webfonts/Handlee-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'librefranklin-semibold';
+  src: url("../webfonts/librefranklin-semibold.woff2") format("woff2"), url("../webfonts/librefranklin-semibold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'librefranklin-light';
+  src: url("../webfonts/librefranklin-light.woff2") format("woff2"), url("../webfonts/librefranklin-light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'librefranklin-regular';
+  src: url("../webfonts/librefranklin-regular.woff2") format("woff2"), url("../webfonts/librefranklin-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'librefranklin-medium';
+  src: url("../webfonts/librefranklin-medium.woff2") format("woff2"), url("../webfonts/librefranklin-medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+@font-face {
+  font-family: 'librefranklin-black';
+  src: url("../webfonts/librefranklin-black.woff2") format("woff2"), url("../webfonts/librefranklin-black.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; 
+}
+h1, h2, h3, h4, h5, h6 {
+  color:$dark-gray;
+}
+
+.h1 {
+	margin: 0;
+	padding:0;
+	text-transform: uppercase;
+	font-size: 2.2rem;
+	color:$dark-gray;
+	font-family: 'librefranklin-regular', sans-serif;
+  text-align:center;
+	@media all and (min-width: 768px) {
+	font-size: 2rem;
+  text-align:left;
+  }
+  @media all and (min-width: 999px) {
+	font-size: 3.2rem;
+  }
+}
+p {
+  font-size:calc(1.4rem);
+  line-height:1.8;
+  margin-bottom:30px;
+}
+
+// Hero Section
+.hero-title {
+    span {
+      display: block;
+    }
+    font-size: 2.1rem;
+    letter-spacing: 0.2rem;
+    @media all and (min-width: 800px) {
+      font-size: 3.1rem;
+    }
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  .hero-subtitle {
+    padding:1em 1em;
+    border-radius:10px;
+    font-family: 'handlee', sans-serif;
+    font-size: 2rem;
+    line-height:1.8;
+    font-weight: 600;
+    max-width:750px;
+    margin: 1.5rem auto;
+    span {
+      display:block;
+      font-family: 'librefranklin-medium', sans-serif;
+    }
+    strong {
+      font-family: 'librefranklin-medium', sans-serif;
+    }
+  }
+// Blockquote
+blockquote p, blockquote .h3 {
+  margin:1rem;
+  color:$dark-gray;
+  font-family: 'librefranklin-regular', sans-serif;
+  font-size:calc(1 * 1.3rem);
+  font-weight: 100;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+}
+blockquote cite {
+  font-size: 0.9rem;
+  margin-bottom:1rem;
+  margin-left:1rem;
+  display: block;
+}
+/* ---------------------------------------------------------------- */
+/* 03.2 Contact Form Variables
+/* ---------------------------------------------------------------- */
+
+// Fonts 
+$font_heading           :  "neuton",sans-serif;
+$font_text              :  "Roboto-Regular",sans-serif;
+
+//Colors 
+$color_primary       :#0ac083;
+$color_danger        :#f27474;
+$color_danger_text   :#721c24;
+$color_success       :#d4edda;
+$color_success_text  :#155724;
+$color_info          :#07f;
+$color_dark          :#151515;
+$color_dark_2        :#000000;
+$color_dark_blue     :#050626;
+$color_black         :#000;
+$color_body_text     :#677294;
+$color_light_grey    :#f1f2f6;
+$color_soft_grey     :#f1f1f1;
+$color_dark_grey     :#272A33;
+$color_white         :#fff;
+$color_shadow        :rgba(61, 82, 96, 0.15);
+
+// Options Color
+$op_color_default     : #0ac083;
+$op_color_orange      : #ff7500;
+$op_color_orange_2    : #ff793f;
+$op_color_blue        : #0652DD;
+$op_color_blue_2      : #2e86de;
+$op_color_red         : #EA2027;
+$op_color_yellow      : #F79F1F;
+$op_color_green       : #6ab04c;
+$op_color_pink        : #FC427B;
+$op_color_turquose    : #01a3a4;
+$op_color_purple      : #B33771;
+$op_color_magenta     : #6F1E51;
+
+//-----------------------------------
+//  Contact Form Mixins
+//-----------------------------------
+@mixin d-flex {
+  display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+} 
+@mixin flex_box_center {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+} 
+@mixin list-reset {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

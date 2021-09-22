@@ -1,0 +1,175 @@
+.hero-button {
+    position:relative;
+    background-color: rgba($callout, 0.9);
+    color: $white;
+    border: 1px solid $callout;
+    padding:2rem 2.5rem;
+    @media all and (min-width: 768px) {
+        padding:1rem 1.5rem;
+    }
+
+    border-radius:.4rem;
+    font-family: "librefranklin-medium", sans-serif;
+    font-size: calc(1 * 1.4rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+  }
+  .hero-button:hover {
+    background-color: rgba($callout, 1);
+    transition: 0.2s;
+    border: 1px solid $mid-gray;
+  }
+
+  .nav-button {
+    position:relative;
+    background-color: rgba($callout, 0.9);
+    color: $white;
+    border: 1px solid $callout;
+    padding:0.75rem 1rem;
+    border-radius:.2rem;
+    font-family: "neuton-regular", sans-serif;
+    font-size: calc(1 * 1.3rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+  }
+  .nav-button:hover {
+    background-color: rgba($callout, 1);
+    transition: 0.2s;
+    color:rgba($white, 0.7);
+    border: 1px solid $white;
+  }
+
+  .button-light {
+    position:relative;
+    background-color: rgba($white, 1);
+    color: $dark-gray;
+    border: 1px solid $white;
+    padding: 0.75rem 2.5rem;
+    border-radius:.4rem;
+    font-family: "librefranklin-medium", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+  }
+  .button-light:hover {
+    background-color: rgba($white, 0.8);
+    transition: 0.2s;
+    border: 1px solid $white;
+    transistion:background-color 250ms ease-in-out;
+    transition:color 250ms ease-in-out;
+  }
+  .button-dark {
+    text-decoration:none;
+    position:relative;
+    background-color: rgba($dark-gray, 1);
+    color: $white;
+    border: 1px solid $dark-gray;
+    padding: 0.75rem 2.5rem;
+    border-radius:.4rem;
+    font-family: "librefranklin-medium", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+  }
+  .button-dark:hover {
+    background-color: rgba($white, 0.8);
+    color:$dark-gray;
+    transition: 0.2s;
+    border: 1px solid $dark-gray;
+    transistion:background-color 250ms ease-in-out;
+    transition:color 250ms ease-in-out;
+  }
+
+/* ---------------------------------------------------------------- */
+/* 04. Contact Form Buttons
+/* ---------------------------------------------------------------- */
+.default-button {
+    border-radius: 5px;
+    display: inline-block;
+    background-color:$color_primary;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 18px 36px;
+    transition: all 0.25s ease;
+    color: $color_white !important;
+    &:after {
+        display: none;
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        transition: all 0.25s ease;
+        background-color: rgba($color_black, 0.247);
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+        top: 50%;
+        left: 50%;
+        animation: ripple 1s;
+        opacity: 0;
+    }
+    &:focus:not(:active)::after {
+        display: block;
+    }
+}
+// Alert Button
+.popup-btn {
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 12px 30px;
+    transition: all 0.25s ease;
+    color: $color_white !important;
+    &:after {
+        display: none;
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        transition: all 0.25s ease;
+        background-color: rgba($color_black, 0.247);
+        width: 100px;
+        height: 100px;
+        margin-top: -50px;
+        margin-left: -50px;
+        top: 50%;
+        left: 50%;
+        animation: ripple 1s;
+        opacity: 0;
+    }
+    &:focus:not(:active)::after {
+        display: block;
+    }
+    &.danger {
+        background-color: $color_danger;
+    }
+    &.success {
+        background-color: $color_primary;
+    }
+    &.agree {
+        background-color:$color_primary;
+    }
+}
+// Check Button
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(10);
+    }
+}

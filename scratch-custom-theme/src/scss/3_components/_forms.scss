@@ -1,0 +1,121 @@
+// @media all and (max-width: 800px) {
+//   section#contact-form {
+//     iframe {
+//       width:100%;
+//       height:400px;
+//     }
+//     text-align:center;
+//     display:none;
+//     position:fixed;
+//     bottom:5%;
+//     left:0;
+//     background-color:$white;
+//     border-radius:2rem;
+//     max-width:100%;
+//     margin:0 auto;
+//     max-height:90vh;
+//     // padding:2.5rem auto;
+//     overflow-y:scroll;
+//     z-index:50;
+//   }  
+// }
+
+// @media all and (min-width: 800px) {
+//   section#contact-form {
+//     iframe {
+//         width:900px;
+//         display:block;
+//         margin:0 auto;
+//       max-width:100%;
+//     height:100vh;
+//     }
+//     text-align:center;
+//     display:none;
+//     position:fixed;
+//     top:calc(100vh - 80vh);
+//     bottom:inherit;
+//     left:25%;
+//     background-color:$white;
+//     border-radius:2rem;
+//     // max-width:50%;
+//     margin:0 auto;
+//     max-height:80vh;
+//     padding:2.5rem auto;
+//     overflow-y:scroll;
+//     z-index:50;
+//   }  
+// }
+
+// POP-UP FORM
+section#center-object {
+  position:fixed;
+  z-index:100;
+  top:106px;
+  left:0;
+  right:0;
+  margin:0 auto;
+  width:100%;
+  max-width:800px;
+  height:calc(100vh - 106px);
+  // Optional css animation to scale from bottom
+  // Creates a pseudo slide effect
+  transition: all .3s ease-in-out; 
+  transform: scale(0.0);
+  transform-origin: 50% 110%;
+}
+section#contact-form {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  height:100vh;
+  width:100%;
+  max-width:100%;
+}
+section#contact-form .close {
+  display:block;
+  width:42px;
+  height:42px;
+  position:absolute;
+  top:20px;
+  right:20px;
+  @media all and (min-width: 768px) {
+    width:32px;
+    height:32px;
+    top:32px;
+    right:32px;
+  }
+
+  opacity:0.5;
+  transition: opacity .25s ease-in-out;
+}
+section#contact-form .close:hover {
+  opacity: 1;
+}
+section#contact-form .close:before, section#contact-form .close:after {
+  position:absolute;
+  left:16px; // half the width of the .close element
+  height:42px;
+  @media all and (min-width: 768px) {
+    height:33px;  
+  }
+
+  
+  width:2px;
+  content:'';
+  background-color:#2a2a2a;
+}
+section#contact-form .close:before {
+  transform: rotate(45deg);
+}
+section#contact-form .close:after {
+  transform: rotate(-45deg);
+}
+iframe#embed-contact-form {
+  border:7px solid $callout;
+  width:100%;
+  width:100vw;
+  max-width:100%;
+  height:calc(100vh - 106px);
+}
